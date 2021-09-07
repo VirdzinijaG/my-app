@@ -25,13 +25,40 @@ root.appendChild(createDiv()); // i elementa idedamas naujas sukuratas elementas
 
 //  funkcija su string'o argumentu, kuris patampa tekstu sukurto div'o viduje
 const createDivText = (text) => {
-    const element =  document.createElement('DIV');
+    const element = document.createElement('DIV');
     const textNode = document.createTextNode(text);
     element.appendChild(textNode);
     return element;
 }
 
 root.appendChild(createDivText('Valio')); // idedmas tekstas i div'a
+
+
+// sugeneruoti tris div'us, ir i kiekviena div'a paimamas tekstas is masyvo
+const data = ['Labas', 'pats', 'tu labas'];
+
+// let html = "";
+// for (let i = 0; i <= data.length; i++) {
+//     console.log(data[i]);
+//     html +=data[i];
+// }
+// document.getElementById('root').innerHTML += html;
+
+const data2 = new Set(['Labas', 'pats', 'tu labas']);
+
+const data3 = new Map([
+    ['viens', 'Labas'],
+    ['du', 'pats'],
+    ['trys', 'tu labas']
+]);
+
+const data4 = {
+    viens: 'Labas',
+    du: 'pats',
+    trys: 'tu labas'
+}
+
+console.log(data4);
 
 
 
