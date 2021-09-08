@@ -7,18 +7,26 @@ const animals = ['Kiškis', 'Lapė', 'Anakonda', 'Sausumų vėplys', 'Bebras'];
 // const sort = animals.sort((a,b) => b.length - a.length);
 // console.log(sort);
 
-animals.forEach((value, index, komoda) => console.log(value, index, komoda));
+// animals.forEach((value, index, komoda) => console.log(value, index, komoda));
 
-console.log(animals.slice());
-animals.sort((a, b) => b.length - a.length)
+// animals.sort((a, b) => b.length - a.length)
+
+//rusiavimas
+
+let c = 0; // c rodys kiek kartu lyginami zodziai
+console.log(animals.slice()); // slice kopija pries rusiavima
+animals.sort((a, b) => {
+    // console.log(++c, a, b);
+   return  b.length - a.length
+})
 console.log(animals);
 
 
-const V = 'Varle';
+// const V = 'Varle';
 
-const niceSentence = 'Ruda ' + V + ' plaukia greitai';
+// const niceSentence = 'Ruda ' + V + ' plaukia greitai';
 
-console.log(niceSentence);
+// console.log(niceSentence);
 
 
-animals.map((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
+// animals.map((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
