@@ -32,6 +32,17 @@ const niceSentence1 = `Ruda ${V} plaukia greitai ${V} plaukia greitai
 
 
 console.log(niceSentence1);
+animals.forEach((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
+const A = animals.forEach((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
+console.log('--------------');
+animals.map((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
+// const B = animals.map((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
+const B = animals.map((value => value)); // grazina masyva su uzpildytomis reiksmemis
 
+console.log(A); // grazina undefind
+console.log(B); // grazina masyva su undefind reiksmemis pirmu variantu
+// antru variantu grazina masyva su reiksmemis
+console.log(B, animals);
 
-// animals.map((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
+const C = animals.map((value) => 'labas ' + value)
+console.log(C);
