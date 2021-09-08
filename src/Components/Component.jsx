@@ -1,13 +1,13 @@
 // import person from '../Data/person';
 
 // Komponentas
-function Element() {
+function Component(props) {
   return (
     <>
       <h1>Hello, Barsukas!</h1>
-      <small></small>
+      <small>{props.name}{props.surname} per{props.per}</small>
     </>
   );
 }
 
-export default Element;
+export default Component;

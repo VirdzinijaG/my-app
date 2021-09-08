@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // import element from './Elements/element';
-import Element from './Components/element';
+import Component from './Components/Component';
+import App from './Components/App';
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -25,7 +26,8 @@ import Element from './Components/element';
 // perkeltas i Elements/element.jsx
 
 ReactDOM.render(
-  <Element/>,
+  // <Component name = {"Petras "} surname = {"Petraitis"}/>,
+  <App per = {' griovi'}/>,
   document.getElementById('root')
 );
 
