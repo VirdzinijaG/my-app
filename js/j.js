@@ -22,11 +22,16 @@ animals.sort((a, b) => {
 console.log(animals);
 
 
-// const V = 'Varle';
+const V = 'Varle';
 
-// const niceSentence = 'Ruda ' + V + ' plaukia greitai';
+const niceSentence = 'Ruda ' + V + ' plaukia greitai plaukia greitai plaukia greitai plaukia greitai plaukia greitai plaukia greitai';
+const niceSentence1 = `Ruda ${V} plaukia greitai ${V} plaukia greitai
+ plaukia greitai ${V} plaukia greitai ${V} plaukia 
+ greitai ${V} plaukia greitai `;
+ // ${} nurodoma kad tai yra kintamasis
 
-// console.log(niceSentence);
+
+console.log(niceSentence1);
 
 
 // animals.map((value, index) => console.log(`stalcius nr ${index} jame guli ${value}`))
