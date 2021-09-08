@@ -14,7 +14,12 @@ root.appendChild(createDivText('Labas')) // idedamas norimas tekstas
 //sukurti 5 div'ai su tekstu viduje is masyvo
 const animals = ['Kiškis', 'Lapė', 'Anakonda', 'Sausumų vėplys', 'Bebras'];
 
+// funkcija, kuri panaudoja css stiliu elementui
+const addClass = (element, className) => element.classList.add(className)
+
 animals.forEach(animal => {
     const div = createDivText(animal) // elemento sukurimas
+    addClass(div, 'grozis')
     root.appendChild(div) // pridedamas elementas i root div'a
 })
+
