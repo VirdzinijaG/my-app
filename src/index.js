@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import element from './Elements/element';
+// import element from './Elements/element';
+import Element from './Components/element';
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -24,7 +25,7 @@ import element from './Elements/element';
 // perkeltas i Elements/element.jsx
 
 ReactDOM.render(
-  element,
+  <Element/>,
   document.getElementById('root')
 );
 
