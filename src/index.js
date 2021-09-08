@@ -4,10 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import element from './Elements/element';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// elemtas turi buti viename tage
+// tagu viduje gali buti aprasyta kiek norima
+// const element = (
+//   <>
+//     <h1>Hello, bebras!</h1>
+//     <small>labas</small>
+//   </>
+// )
+// perkeltas i Elements/element.jsx
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  element,
   document.getElementById('root')
 );
 
