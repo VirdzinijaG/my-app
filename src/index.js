@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './index.scss';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -27,7 +28,8 @@ import App from './Components/App';
 
 ReactDOM.render(
   // <Component name = {"Petras "} surname = {"Petraitis"}/>,
-  <App per = {' griovi'}/>,
+  // <App per = {' griovi'}/>,
+  <App/>,
   document.getElementById('root')
 );
 
