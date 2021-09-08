@@ -2,5 +2,12 @@
     width: 223px;
     height: 223px;
     background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    span {
+        font-size: 30px;
+    }
   }
   
