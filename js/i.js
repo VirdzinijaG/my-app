@@ -20,7 +20,7 @@ const createDiv = () => document.createElement('DIV');
 
 
 // sukurto elemto div idejimas i html div'a
-const root = document.querySelector('#root') // surastas elementas su id
+const root = document.querySelector(`#root`) // surastas elementas su id
 root.appendChild(createDiv()); // i elementa idedamas naujas sukuratas elementas (div'as)
 
 //  funkcija su string'o argumentu, kuris patampa tekstu sukurto div'o viduje
