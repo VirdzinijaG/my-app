@@ -12,9 +12,9 @@ class Mygtukas extends React.Component {
     }
     render() {
         return (
-            <span>
-
-            </span>
+            <button>
+                {this.props.text}
+            </button>
         )
     }
 
