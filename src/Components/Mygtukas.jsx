@@ -5,16 +5,29 @@ class Mygtukas extends React.Component {
         super();
         // this.state = { date: new Date() }
     }
+
+    activateLasers = () => {
+        // console.log('Lazeriai aktyvuoti');
+        // console.log(this);
+        console.log(`Lazeriai ${this.props.tekstas} aktyvuoti`);
+    }
+
     componentDidMount() {
+
+        document.querySelector('#root').
+        addEventListener('click', e => {
+            console.log('Valio');
+        })
 
     }
     componentWillUnmount() {
     }
     render() {
         return (
-            <div className="container">
-            <div className="submit-feedback">{this.props.tekstas}</div>
-          </div>
+            <div className="container" onClick={this.activateLasers}>
+            {/* <div className="container" onClick={ () => this.activateLasers ()}></div> */}
+                <div className="submit-feedback">{this.props.tekstas}</div>
+            </div>
         )
     }
 
