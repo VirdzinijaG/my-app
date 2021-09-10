@@ -79,3 +79,18 @@ body {
 #root {
 	padding: 50px;
 }
+
+
+.nice-d {
+	width: 30px;
+    height: 30px;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    &.green {
+        background-color: greenyellow;
+    }
+}

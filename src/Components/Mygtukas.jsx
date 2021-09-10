@@ -1,4 +1,5 @@
 import React from 'react';
+import CountDisplay from './CountDisplay';
 
 class Mygtukas extends React.Component {
     constructor() {
@@ -53,6 +54,7 @@ class Mygtukas extends React.Component {
                 <a href="" className="container" onClick={(e) => this.activateLasers(e)}>
                     <div className="submit-feedback">{this.props.tekstas} {this.state.counter}</div>
                 </a>
+                <CountDisplay digit={this.state.counter}></CountDisplay>
             </div>
         )
     }
