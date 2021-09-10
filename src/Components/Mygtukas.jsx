@@ -13,7 +13,7 @@ class Mygtukas extends React.Component {
     render() {
         return (
             <button>
-                {this.props.text}
+                {this.props.tekstas}
             </button>
         )
     }
