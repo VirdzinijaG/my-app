@@ -8,6 +8,7 @@ class Mygtukas extends React.Component {
 
     activateLasers = (e) => {
         // console.log(e);
+        e.preventDefault(); // nebeperkarauna puslapio naudojant a
         e.stopPropagation(); // nebespausdina valio
         // console.log('Lazeriai aktyvuoti');
         // console.log(this);
@@ -34,9 +35,12 @@ class Mygtukas extends React.Component {
         return (
             // <div className="container" onClick={this.activateLasers}>
             <div onClick={(e) => this.valio(e)}>
-                <div className="container" onClick={(e) => this.activateLasers(e)}>
+                {/* <div className="container" onClick={(e) => this.activateLasers(e)}>
                     <div className="submit-feedback">{this.props.tekstas}</div>
-                </div>
+                </div> */}
+                <a href="" className="container" onClick={(e) => this.activateLasers(e)}>
+                    <div className="submit-feedback">{this.props.tekstas}</div>
+                </a>
             </div>
         )
     }
