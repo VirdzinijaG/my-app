@@ -10,9 +10,17 @@ class Mygtukas extends React.Component {
         // console.log(e);
         e.preventDefault(); // nebeperkarauna puslapio naudojant a
         e.stopPropagation(); // nebespausdina valio
-        this.setState({
-            counter: this.state.counter + 1,
-        });
+
+        // Wrong
+        // this.setState({
+        //     counter: this.state.counter + 1,
+        // });
+
+        // Correct
+        this.setState((state, props) => ({
+            counter: state.counter + props.amount
+        }))
+
         // console.log('Lazeriai aktyvuoti');
         // console.log(this);
         console.log(`Lazeriai ${this.props.tekstas} aktyvuoti`);
