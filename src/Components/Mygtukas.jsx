@@ -3,16 +3,20 @@ import React from 'react';
 class Mygtukas extends React.Component {
     constructor() {
         super();
-        // this.state = { date: new Date() }
+        this.state = { counter: 0 }
     }
 
     activateLasers = (e) => {
         // console.log(e);
         e.preventDefault(); // nebeperkarauna puslapio naudojant a
         e.stopPropagation(); // nebespausdina valio
+        this.setState({
+            counter: this.state.counter + 1,
+        });
         // console.log('Lazeriai aktyvuoti');
         // console.log(this);
         console.log(`Lazeriai ${this.props.tekstas} aktyvuoti`);
+
     }
 
     valio = (e) => {
@@ -39,7 +43,7 @@ class Mygtukas extends React.Component {
                     <div className="submit-feedback">{this.props.tekstas}</div>
                 </div> */}
                 <a href="" className="container" onClick={(e) => this.activateLasers(e)}>
-                    <div className="submit-feedback">{this.props.tekstas}</div>
+                    <div className="submit-feedback">{this.props.tekstas} {this.state.counter}</div>
                 </a>
             </div>
         )
