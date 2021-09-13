@@ -1,5 +1,6 @@
 import React from 'react';
 import CountDisplay from './CountDisplay';
+import Mygtukas2 from './Mygtukas2';
 
 class Mygtukas extends React.Component {
     constructor() {
@@ -56,6 +57,7 @@ class Mygtukas extends React.Component {
                     {/*  {this.state.counter} pries tai buo irasytas dar */}
                 </a>
                 <CountDisplay digit={this.state.counter}></CountDisplay>
+                <Mygtukas2 virve={this.activateLasers}></Mygtukas2>
             </div>
         )
     }

@@ -4,7 +4,7 @@ class Mygtukas2 extends React.Component {
 
     render() {
         return (
-            <a href="" className="container">
+            <a href="" className="container" onClick={e => this.props.virve(e)}>
                 <div className="submit-feedback">Pagalbinis</div>
             </a>
         );
