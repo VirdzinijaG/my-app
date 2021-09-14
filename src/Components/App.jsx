@@ -25,6 +25,14 @@ class App extends React.Component {
         });
     }
 
+    // viena funkcija su argumentu
+    changeColor = (color) => {
+        console.log(color);
+        this.setState({
+            bg: color,
+        });
+    }
+
 
 
 
@@ -33,9 +41,12 @@ class App extends React.Component {
             <div className='circle' style={{
                 backgroundColor: this.state.bg
             }}>
-                < ChangeColorButton color={'Palegreen'} clickToChangeColor={this.changeColorP} ></ChangeColorButton >
-                < ChangeColorButton color={'Orengred'} clickToChangeColor={this.changeColorO} ></ChangeColorButton >
-                < ChangeColorButton color={'Greenyellow'} clickToChangeColor={this.changeColorG} ></ChangeColorButton >
+                {/* < ChangeColorButton color={'palegreen'} clickToChangeColor={this.changeColorP} ></ChangeColorButton >
+                < ChangeColorButton color={'orengred'} clickToChangeColor={this.changeColorO} ></ChangeColorButton >
+                < ChangeColorButton color={'greenyellow'} clickToChangeColor={this.changeColorG} ></ChangeColorButton > */}
+                < ChangeColorButton color={'palegreen'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                < ChangeColorButton color={'orengred'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                < ChangeColorButton color={'greenyellow'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
             </div >
         );
     }
