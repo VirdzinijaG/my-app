@@ -1,10 +1,12 @@
 import React from 'react';
 
+import ChangeColorButton from './ChangeColorButton';
+
 class App extends React.Component {
 
     constructor() {
         super();
-        this.state = { bg: 'green'}
+        this.state = { bg: 'green' }
     }
 
     changeColor = () => {
@@ -14,13 +16,27 @@ class App extends React.Component {
         // pasikeicia viena karta spalva
 
         // keiciasi kas kart paspaudus
-        this.setState(state => ({bg: state.bg === 'green' ? 'orangered': 'green'}))
+        this.setState(state => {
+            let color;
+            if (state.bg === 'green') {
+                color = 'orangered'
+            }
+            else if (state.bg === 'orangered') {
+                color = 'green'
+            }
+
+            return (
+                // { bg: state.bg === 'green' ? 'orangered' : 'green' }
+                { bg: color }
+            )
+        })
     }
 
     render() {
         return (
             <div className='circle' style={{ backgroundColor: this.state.bg }}>
-                <button className="container" onClick={this.changeColor}>Jaaa!</button>
+                {/* <button className="container" onClick={this.changeColor}>Jaaa!</button> */}
+                <ChangeColorButton clickToChangeColor={this.changeColor}></ChangeColorButton>
             </div>
         );
     }
