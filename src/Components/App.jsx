@@ -33,9 +33,9 @@ class App extends React.Component {
             <div className='circle' style={{
                 backgroundColor: this.state.bg
             }}>
-                < ChangeColorButton color={'Palegreen'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
-                < ChangeColorButton color={'Orengred'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
-                < ChangeColorButton color={'Greenyellow'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                < ChangeColorButton color={'Palegreen'} clickToChangeColor={this.changeColorP} ></ChangeColorButton >
+                < ChangeColorButton color={'Orengred'} clickToChangeColor={this.changeColorO} ></ChangeColorButton >
+                < ChangeColorButton color={'Greenyellow'} clickToChangeColor={this.changeColorG} ></ChangeColorButton >
             </div >
         );
     }
