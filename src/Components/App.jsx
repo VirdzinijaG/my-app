@@ -44,9 +44,9 @@ class App extends React.Component {
                 {/* < ChangeColorButton color={'palegreen'} clickToChangeColor={this.changeColorP} ></ChangeColorButton >
                 < ChangeColorButton color={'orengred'} clickToChangeColor={this.changeColorO} ></ChangeColorButton >
                 < ChangeColorButton color={'greenyellow'} clickToChangeColor={this.changeColorG} ></ChangeColorButton > */}
-                < ChangeColorButton color={'palegreen'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
-                < ChangeColorButton color={'orengred'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
-                < ChangeColorButton color={'greenyellow'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                < ChangeColorButton regNumber={23} color={'palegreen'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                < ChangeColorButton regNumber={53} color={'orangered'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                < ChangeColorButton regNumber={77} color={'greenyellow'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
             </div >
         );
     }

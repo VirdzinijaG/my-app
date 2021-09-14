@@ -102,21 +102,28 @@ body {
 
 // apskritimas 09.13
 .circle {
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   // background-color: green; perkeltas i app
   display: flex;
   justify-content: center;
   align-items: center;
   button {
-    width: 150px;
-    height: 40px;
+    width: 250px;
+    height: 70px;
     border-radius: 20px;
     border: none;
     background-color: yellow;
     font-size: 17px;
     letter-spacing: 2px;
     cursor: pointer;
+    position: relative;
+    .reg {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 10px;
+    }
   }
 }
