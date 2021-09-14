@@ -109,6 +109,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  input {
+    position: absolute;
+    top: 50px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+  }
   button {
     width: 250px;
     height: 70px;

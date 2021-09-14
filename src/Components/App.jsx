@@ -6,7 +6,10 @@ class App extends React.Component {
 
     constructor() {
         super();
-        this.state = { bg: 'green' }
+        this.state = {
+            bg: 'green',
+            in: 'AAA'
+        }
     }
 
     changeColorP = () => {
@@ -30,6 +33,7 @@ class App extends React.Component {
         console.log(color);
         this.setState({
             bg: color,
+            in: color
         });
     }
 
@@ -47,6 +51,7 @@ class App extends React.Component {
                 < ChangeColorButton regNumber={23} color={'palegreen'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
                 < ChangeColorButton regNumber={53} color={'orangered'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
                 < ChangeColorButton regNumber={77} color={'greenyellow'} clickToChangeColor={this.changeColor} ></ChangeColorButton >
+                <input type="text" value={this.state.in} onChange={this.inChange} />
             </div >
         );
     }
