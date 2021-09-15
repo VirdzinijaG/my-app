@@ -37,7 +37,15 @@ class App extends React.Component {
         });
     }
 
-
+    inChange = (e) => {
+        // console.log("rasau");
+        console.log(e.target.value);
+        this.setState({
+            //    in: 'c'
+            in: e.target.value,
+            bg: e.target.value // ivedus spalva i input toks apskritimas pasiadro
+        })
+    }
 
 
     render() {
