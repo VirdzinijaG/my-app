@@ -7,25 +7,15 @@ class App extends React.Component {
         super();
         this.state = {
             bg: 'green',
-            bgIn: ''
+            bgIn: '',
+            size: 500,
+            sizeIn: '',
         }
     }
 
-    changeColor = (color) => {
-        console.log(color);
-        this.setState({
-            bg: color,
-            // in: color
-        });
-    }
-
     inChangeColor = (e) => {
-        // console.log("rasau");
-        console.log(e.target.value);
         this.setState({
-            //    in: 'c'
             bgIn: e.target.value,
-            // bg: e.target.value // ivedus spalva i input toks apskritimas pasiadro
         })
     }
 
@@ -33,13 +23,29 @@ class App extends React.Component {
         this.setState(state => ({ bg: state.bgIn }))
     }
 
+    inChangeSize = (e) => {
+        this.setState({
+            sizeIn: e.target.value,
+        });
+    }
+    doSize = () => {
+        this.setState(state => ({ size: state.sizeIn }));
+    }
 
     render() {
         return (
-            <div className='circle' style={{ backgroundColor: this.state.bg }}>
-                <input type="text" value={this.state.bgIn} onChange={this.inChangeColor} />
-                <button className='input-button' onClick={this.doColor}>Change color</button>
+            <div className='circle' style={{
+                backgroundColor: this.state.bg,
+                width: this.state.size + 'px',
+                height: this.state.size + 'px',
+            }}>
                 <div>
+                    <input type="text" value={this.state.bgIn} onChange={this.inChangeColor} />
+                    <button className='input-button' onClick={this.doColor}>Change color</button>
+                </div>
+                <div>
+                    <input type="text" value={this.state.sizeIn} onChange={this.inChangeSize} />
+                    <button className="input-button" onClick={this.doSize}>Change Size</button>
                 </div >
             </div >
         );
