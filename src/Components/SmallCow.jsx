@@ -1,6 +1,6 @@
 function SmallCow(props) {
     return (
-        <div className="small-circle">
+        <div className="small-circle" style={{ backgroundColor: props.color }}>
             {props.color}
         </div>
     )

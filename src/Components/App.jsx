@@ -14,7 +14,11 @@ class App extends React.Component {
 
     addCow = (e) => {
         const cow = { color: this.state.cowInput }
-        this.setState(state => ({ cow: state.cows.slice().push(cow) }))
+        const cows = this.state.cows.slice();
+        cows.push(cow);
+        this.setState({ cows: cows })
+        console.log(cows);
+        // this.setState(state => ({ cows: state.cows.slice().push(cow) }))
     }
 
     cowInputHandler = (e) => {
@@ -25,9 +29,9 @@ class App extends React.Component {
     render() {
         return (
             <>
-                {this.state.cows.map((b, i) => <SmallCow key={i} color={b}></SmallCow>)}
+                {this.state.cows.map((b, i) => <SmallCow key={i} color={b.color}></SmallCow>)}
                 <div>
-                    <input type="text" value={this.state.bgIn} onChange={this.cowInputHandler} />
+                    <input type="text" value={this.state.cowInput} onChange={this.cowInputHandler} />
                     <button className='input-button' onClick={this.addCow}>Add Cow</button>
                 </div>
             </ >
