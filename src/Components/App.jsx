@@ -12,19 +12,28 @@ class App extends React.Component {
         }
     }
 
-    addCow = (e) => {
+    addCow = () => {
         const cow = { color: this.state.cowInput }
         const cows = this.state.cows.slice();
         cows.push(cow);
         this.setState({ cows: cows })
-        console.log(cows);
+        localStorage.setItem('Allcows', JSON.stringify(cows));
+        // console.log(cows);
         // this.setState(state => ({ cows: state.cows.slice().push(cow) }))
     }
 
     cowInputHandler = (e) => {
         this.setState(state => ({ cowInput: e.target.value }))
     }
-
+    componentDidMount() {
+        const cows = JSON.parse(localStorage.getItem('Allcows'));
+        if (null === cows) {
+            return
+        }
+        this.setState({
+            cows: cows
+        })
+    }
 
     render() {
         return (
