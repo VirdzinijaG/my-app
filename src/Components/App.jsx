@@ -10,6 +10,7 @@ class App extends React.Component {
             bgIn: '',
             size: 500,
             sizeIn: '',
+            shapeSquare: false
         }
     }
 
@@ -31,6 +32,17 @@ class App extends React.Component {
     doSize = () => {
         this.setState(state => ({ size: state.sizeIn }));
     }
+    inChangeShape = () => {
+        // console.log('jop');
+
+        //good
+        this.setState(state => ({ shapeSquare: (!state.shapeSquare) }))
+
+        // wrong
+        // this.setState({
+        //     shapeSquare: (!this.state.shapeSquare)
+        // })
+    }
 
     render() {
         return (
@@ -38,6 +50,7 @@ class App extends React.Component {
                 backgroundColor: this.state.bg,
                 width: this.state.size + 'px',
                 height: this.state.size + 'px',
+                borderRadius: this.state.shapeSquare ? '0' : '50%'
             }}>
                 <div>
                     <input type="text" value={this.state.bgIn} onChange={this.inChangeColor} />
@@ -46,6 +59,10 @@ class App extends React.Component {
                 <div>
                     <input type="text" value={this.state.sizeIn} onChange={this.inChangeSize} />
                     <button className="input-button" onClick={this.doSize}>Change Size</button>
+                </div >
+                <div>
+                    <input className="check" type="checkbox" onChange={this.inChangeShape} checked={this.state.shapeSquare} />
+                    <label>Change shape</label>
                 </div >
             </div >
         );
