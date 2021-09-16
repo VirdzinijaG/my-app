@@ -1,5 +1,6 @@
 import React from 'react';
-import SmallCow from './SmallCow';
+import SmallAnimal from './SmallAnimal';
+// import getId from '../Shared/id';
 
 
 class App extends React.Component {
@@ -7,43 +8,76 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            cows: [],
-            cowInput: ""
-        }
+            animals: [],
+            cowInput: ''
+        };
     }
 
-    addCow = () => {
-        const cow = { color: this.state.cowInput }
-        const cows = this.state.cows.slice();
-        cows.push(cow);
-        this.setState({ cows: cows })
-        localStorage.setItem('Allcows', JSON.stringify(cows));
-        // console.log(cows);
-        // this.setState(state => ({ cows: state.cows.slice().push(cow) }))
+    addAnimal = (a) => {
+        const animal = {  color: this.state.cowInput, animal: a };
+        const animals = this.state.animals.slice();
+        animals.push(animal);
+        this.setState({
+            animals: animals
+        })
+        localStorage.setItem('allAnimals', JSON.stringify(animals));
     }
+
+    // deleteAnimal = (id) => {
+    //     const animals = this.state.animals.slice();
+    //     for (let i = 0; i < animals.length; i++) {
+    //         if (animals[i].id == id) {
+    //             animals.splice(i, 1);
+    //             break;
+    //         }
+    //     }
+    //     this.setState({
+    //         animals: animals
+    //     });
+    //     localStorage.setItem('allAnimals', JSON.stringify(animals));
+    // }
+
+    // editAnimal = (id, color) => {
+    //     const animals = this.state.animals.slice();
+    //     for (let i = 0; i < animals.length; i++) {
+    //         if (animals[i].id == id) {
+    //             animals[i].color = color;
+    //             break;
+    //         }
+    //     }
+    //     this.setState({
+    //         animals: animals
+    //     });
+    //     localStorage.setItem('allAnimals', JSON.stringify(animals));
+    // }
 
     cowInputHandler = (e) => {
-        this.setState(state => ({ cowInput: e.target.value }))
+        this.setState({
+            cowInput: e.target.value,
+        });
     }
+
     componentDidMount() {
-        const cows = JSON.parse(localStorage.getItem('Allcows'));
-        if (null === cows) {
-            return
+        const animals = JSON.parse(localStorage.getItem('allAnimals'));
+        if (null === animals) {
+            return;
         }
         this.setState({
-            cows: cows
+            animals: animals
         })
     }
+
 
     render() {
         return (
             <>
-                {this.state.cows.map((b, i) => <SmallCow key={i} color={b.color}></SmallCow>)}
+                {this.state.animals.map(b => <SmallAnimal key={b.id} color={b.color} animal={b.animal} />)}
                 <div>
                     <input type="text" value={this.state.cowInput} onChange={this.cowInputHandler} />
-                    <button className='input-button' onClick={this.addCow}>Add Cow</button>
+                    <button className="input-button" onClick={() => this.addAnimal('cow')}>Add Cow</button>
+                    <button className="input-button" onClick={() => this.addAnimal('sheep')}>Add Sheep</button>
                 </div>
-            </ >
+            </>
         );
     }
 }
