@@ -1,4 +1,5 @@
 import React from 'react';
+import SmallCow from './SmallCow';
 
 
 class App extends React.Component {
@@ -6,49 +7,32 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            bg: 'green',
-            bgIn: '',
-            size: 500,
-            sizeIn: '',
+            cows: [],
+            cowInput: ""
         }
     }
 
-    inChangeColor = (e) => {
-        this.setState({
-            bgIn: e.target.value,
-        })
+    addCow = (e) => {
+        const cow = { color: this.state.cowInput }
+        this.setState(state => ({ cow: state.cows.slice().push(cow) }))
     }
 
-    doColor = () => {
-        this.setState(state => ({ bg: state.bgIn }))
+    cowInputHandler = (e) => {
+        this.setState(state => ({ cowInput: e.target.value }))
     }
 
-    inChangeSize = (e) => {
-        this.setState({
-            sizeIn: e.target.value,
-        });
-    }
-    doSize = () => {
-        this.setState(state => ({ size: state.sizeIn }));
-    }
 
     render() {
         return (
-            <div className='circle' style={{
-                backgroundColor: this.state.bg,
-                width: this.state.size + 'px',
-                height: this.state.size + 'px',
-            }}>
+            <>
+                {this.state.cows.map((b, i) => <SmallCow key={i} color={b}></SmallCow>)}
                 <div>
-                    <input type="text" value={this.state.bgIn} onChange={this.inChangeColor} />
-                    <button className='input-button' onClick={this.doColor}>Change color</button>
+                    <input type="text" value={this.state.bgIn} onChange={this.cowInputHandler} />
+                    <button className='input-button' onClick={this.addCow}>Add Cow</button>
                 </div>
-                <div>
-                    <input type="text" value={this.state.sizeIn} onChange={this.inChangeSize} />
-                    <button className="input-button" onClick={this.doSize}>Change Size</button>
-                </div >
-            </div >
+            </ >
         );
     }
 }
+
 export default App;
