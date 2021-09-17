@@ -38,19 +38,20 @@ class App extends React.Component {
         localStorage.setItem('allAnimals', JSON.stringify(animals));
     }
 
-    // editAnimal = (id, color) => {
-    //     const animals = this.state.animals.slice();
-    //     for (let i = 0; i < animals.length; i++) {
-    //         if (animals[i].id == id) {
-    //             animals[i].color = color;
-    //             break;
-    //         }
-    //     }
-    //     this.setState({
-    //         animals: animals
-    //     });
-    //     localStorage.setItem('allAnimals', JSON.stringify(animals));
-    // }
+    editAnimal = (id, color) => {
+        console.log(id, color);
+        const animals = this.state.animals.slice();
+        for (let i = 0; i < animals.length; i++) {
+            if (animals[i].id == id) {
+                animals[i].color = color;
+                break;
+            }
+        }
+        this.setState({
+            animals: animals
+        });
+        localStorage.setItem('allAnimals', JSON.stringify(animals));
+    }
 
     cowInputHandler = (e) => {
         this.setState({
@@ -72,7 +73,7 @@ class App extends React.Component {
     render() {
         return (
             <>
-                {this.state.animals.map(b => <SmallAnimal key={b.id} delete={this.deleteAnimal} id={b.id} color={b.color} animal={b.animal} />)}
+                {this.state.animals.map(b => <SmallAnimal key={b.id} delete={this.deleteAnimal} edit={this.editAnimal} id={b.id} color={b.color} animal={b.animal} />)}
                 <div>
                     <input type="text" value={this.state.cowInput} onChange={this.cowInputHandler} />
                     <button className="input-button" onClick={() => this.addAnimal('cow')}>Add Cow</button>
