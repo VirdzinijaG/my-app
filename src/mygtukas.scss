@@ -145,13 +145,14 @@ body {
 }
 
 .small-circle {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-direction: column;
   margin: 5px;
 }
 
@@ -167,4 +168,21 @@ body {
   cursor: pointer;
   position: relative;
   margin: 5px;
+}
+
+.input-button-small {
+  background-color: peru;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: white;
+  padding: 8px;
+  margin: 5px;
+}
+span {
+  font-size: 27px;
+  letter-spacing: 2px;
+  color: #000000;
+  padding: 16px;
 }
