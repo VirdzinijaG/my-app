@@ -122,6 +122,7 @@ body {
     margin: 5px;
     width: 200px;
     margin-left: 30px;
+    margin: 10px;
   }
 
   button {
@@ -151,4 +152,19 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: 5px;
+}
+
+// 09.16 ansktesnis neveike
+.input-button {
+  width: 150px;
+  height: 70px;
+  border-radius: 20px;
+  border: none;
+  background-color: yellow;
+  font-size: 17px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  margin: 5px;
 }
