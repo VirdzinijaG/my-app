@@ -1,9 +1,9 @@
-import M3F from './M3F';
+import M3 from './M3';
 
 function App(props) {
     return (
         <>
-            <M3F></M3F>
+            <M3></M3>
         </>
     );
 }
