@@ -1,12 +1,12 @@
-import React, { setState } from 'react';
+import React, { useState } from 'react';
 import SmallAnimalF from './SmallAnimalF';
 import getId from '../Shared/id';
 
 
 function App() {
 
-    const [animals, setAnimals] = setState([]);
-    const [cowInput, setCowInput] = setState('');
+    const [animals, setAnimals] = useState([]);
+    const [cowInput, setCowInput] = useState('');
 
     const addAnimal = (a) => {
         const animal = { id: getId(), color: cowInput, animal: a };
@@ -55,7 +55,7 @@ function App() {
     //     if (null === animals) {
     //         return;
     //     }
-    //     this.setState({
+    //     this.useState({
     //         animals: animals
     //     })
     // }
@@ -64,7 +64,7 @@ function App() {
 
     return (
         <>
-            {animals.map(b => <SmallAnimal key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} />)}
+            {animals.map(b => <SmallAnimalF key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} />)}
             <div>
                 <input type="text" value={cowInput} onChange={cowInputHandler} />
                 <button className="input-button" onClick={() => addAnimal('cow')}>Add Cow</button>
