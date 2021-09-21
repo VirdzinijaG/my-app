@@ -94,11 +94,11 @@ function App() {
             <div className="field">
                 <div className="farm">
                     <h1>Farm No 1</h1>
-                    {animals.map(b => <SmallAnimalF farmNumber={1} key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} change={changeFarm} />)}
+                    {animals.map(b => <SmallAnimalF farm1={b.farm1} farmNumber={1} key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} change={changeFarm} />)}
                 </div>
                 <div className="farm">
                     <h1>Farm No 2</h1>
-                    {animals.map(b => <SmallAnimalF farmNumber={2} key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} change={changeFarm} />)}
+                    {animals.map(b => <SmallAnimalF farm1={b.farm1} farmNumber={2} key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} change={changeFarm} />)}
                 </div>
             </div>
             <div>
