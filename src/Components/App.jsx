@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SmallAnimalF from './SmallAnimalF';
 import getId from '../Shared/id';
 
@@ -7,6 +7,18 @@ function App() {
 
     const [animals, setAnimals] = useState([]);
     const [cowInput, setCowInput] = useState('');
+
+    useEffect(() => {
+        console.log('animals changed');
+    }, [animals])
+
+    useEffect(() => {
+        console.log('cowInput changed');
+    }, [cowInput])
+
+    useEffect(() => {
+        console.log('something changed');
+    }, [cowInput, animals])
 
     const addAnimal = (a) => {
         const animal = { id: getId(), color: cowInput, animal: a };
