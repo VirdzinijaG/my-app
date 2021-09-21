@@ -30,7 +30,12 @@ function App() {
     // }, [cowInput, animals])
 
     const addAnimal = (a) => {
-        const animal = { id: getId(), color: cowInput, animal: a };
+        const animal = {
+            id: getId(),
+            color: cowInput,
+            animal: a,
+            farm1: true
+        };
         const animalsCopy = animals.slice();
         animalsCopy.push(animal);
 
@@ -67,13 +72,35 @@ function App() {
         localStorage.setItem('allAnimals', JSON.stringify(animalsCopy));
     }
 
+    const changeFarm = (id) => {
+        const animalsCopy = animals.slice();
+        for (let i = 0; i < animalsCopy.length; i++) {
+            if (animalsCopy[i].id == id) {
+                animalsCopy[i].farm1 = !animalsCopy[i].farm1;
+                break;
+            }
+        }
+        setAnimals(animalsCopy);
+
+        localStorage.setItem('allAnimals', JSON.stringify(animalsCopy));
+    }
+
     const cowInputHandler = (e) => {
         setCowInput(e.target.value);
     }
 
     return (
         <>
-            {animals.map(b => <SmallAnimalF key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} />)}
+            <div className="field">
+                <div className="farm">
+                    <h1>Farm No 1</h1>
+                    {animals.map(b => <SmallAnimalF farmNumber={1} key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} change={changeFarm} />)}
+                </div>
+                <div className="farm">
+                    <h1>Farm No 2</h1>
+                    {animals.map(b => <SmallAnimalF farmNumber={2} key={b.id} delete={deleteAnimal} edit={editAnimal} id={b.id} color={b.color} animal={b.animal} change={changeFarm} />)}
+                </div>
+            </div>
             <div>
                 <input type="text" value={cowInput} onChange={cowInputHandler} />
                 <button className="input-button" onClick={() => addAnimal('cow')}>Add Cow</button>

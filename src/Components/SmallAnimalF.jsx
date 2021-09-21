@@ -9,6 +9,7 @@ function SmallAnimalF(props) {
         setEditInput(e.target.value)
     }
 
+// if (props. farNumber === 1 && )
 
     return (
         <div className="small-circle" style={{
@@ -17,6 +18,7 @@ function SmallAnimalF(props) {
         }}>
             <span>{props.color}</span>
             <button className="input-button-small" onClick={() => props.delete(props.id)}>Go Home</button>
+            <button className="input-button-small" onClick={() => props.change(props.id)}>Change Farm</button>
             <div className="center">
                 <input type="text" value={editInput} onChange={editInputHandler} />
                 <button className="input-button-small" onClick={() => props.edit(props.id, editInput)}>Edit Color</button>

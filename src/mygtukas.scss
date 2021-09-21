@@ -206,3 +206,17 @@ button {
   cursor: pointer;
   position: relative;
 }
+
+.field {
+  display: flex;
+  .farm {
+    width: 50%;
+    margin: 9px;
+    padding: 8px;
+    border: 4px dashed greenyellow;
+    h1 {
+      text-align: center;
+      color: greenyellow;
+    }
+  }
+}
