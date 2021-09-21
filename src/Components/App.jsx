@@ -9,16 +9,25 @@ function App() {
     const [cowInput, setCowInput] = useState('');
 
     useEffect(() => {
-        console.log('animals changed');
-    }, [animals])
+        // console.log('did Mount');
+        const animalsCopy = JSON.parse(localStorage.getItem('allAnimals'));
+        if (null === animalsCopy) {
+            return;
+        }
+        setAnimals(animalsCopy)
+    }, [])
 
-    useEffect(() => {
-        console.log('cowInput changed');
-    }, [cowInput])
+    // useEffect(() => {
+    //     console.log('animals changed');
+    // }, [animals])
 
-    useEffect(() => {
-        console.log('something changed');
-    }, [cowInput, animals])
+    // useEffect(() => {
+    //     console.log('cowInput changed');
+    // }, [cowInput])
+
+    // useEffect(() => {
+    //     console.log('something changed');
+    // }, [cowInput, animals])
 
     const addAnimal = (a) => {
         const animal = { id: getId(), color: cowInput, animal: a };
@@ -26,7 +35,7 @@ function App() {
         animalsCopy.push(animal);
 
         setAnimals(animalsCopy);
-        // localStorage.setItem('allAnimals', JSON.stringify(animals));
+        localStorage.setItem('allAnimals', JSON.stringify(animalsCopy));
     }
 
     const deleteAnimal = (id) => {
@@ -41,7 +50,7 @@ function App() {
 
         setAnimals(animalsCopy);
 
-        // localStorage.setItem('allAnimals', JSON.stringify(animals));
+        localStorage.setItem('allAnimals', JSON.stringify(animalsCopy));
     }
 
     const editAnimal = (id, color) => {
@@ -55,24 +64,12 @@ function App() {
         }
         setAnimals(animalsCopy);
 
-        // localStorage.setItem('allAnimals', JSON.stringify(animals));
+        localStorage.setItem('allAnimals', JSON.stringify(animalsCopy));
     }
 
     const cowInputHandler = (e) => {
         setCowInput(e.target.value);
     }
-
-    // componentDidMount() {
-    //     const animals = JSON.parse(localStorage.getItem('allAnimals'));
-    //     if (null === animals) {
-    //         return;
-    //     }
-    //     this.useState({
-    //         animals: animals
-    //     })
-    // }
-
-
 
     return (
         <>
