@@ -48,3 +48,7 @@ img {
     height: 30px;
     background-color: skyblue;
 }
+.buy:hover {
+    background-color: blue;
+    transition: background-color 0.5s;
+}

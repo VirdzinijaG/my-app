@@ -8,7 +8,7 @@ function Book(props) {
             <div className="title">{props.data.title}</div>
             <img src={props.data.img} alt="#" />
             <div className="price">Kaina {props.data.price} Eur
-                <button className="buy">Pirkti</button>
+                <button className="buy" onClick={() => props.delete(props.data.id)}>Pirkti</button>
             </div>
         </div>
     )

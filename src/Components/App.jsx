@@ -14,12 +14,22 @@ function App() {
             })
     }, []);
 
+    const sniuriukasBook = (id) => {
+        const booksCopy = books.slice();
+        for (let i = 0; i < booksCopy.length; i++) {
+            if (booksCopy[i].id == id) {
+                booksCopy.splice(i, 1);
+                break;
+            }
+        }
+        setBooks(booksCopy);
+    }
 
 
     return (
         <div className="book-container">
-              <h1>Knygų sąrašas</h1>
-            {books.map((book) => (<Book key={book.id} data={book}></Book>))}
+            <h1>Knygų sąrašas</h1>
+            {books.map((book) => (<Book key={book.id} data={book} delete={sniuriukasBook}></Book>))}
         </div>
     )
 }
