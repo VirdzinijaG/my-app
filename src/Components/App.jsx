@@ -15,10 +15,23 @@ function App() {
                 console.log(response.data);
                 setTodos(response.data);
             })
-    }, [])
+    }, []);
+
+    const sniuriukasTodui = (id) => {
+        const todosCopy = todos.slice();
+        for (let i = 0; i < todosCopy.length; i++) {
+            if (id === todosCopy[i].id) {
+                todosCopy[i].completed = !todosCopy[i].completed
+                break;
+            }
+        }
+        // console.log(id);
+        setTodos(todosCopy);
+    }
+
     return (
         <div className="todo-container">
-            {todos.map((todo) => (<Todo key={todo.id} data={todo}></Todo>))}
+            {todos.map((todo) => (<Todo key={todo.id} data={todo} sniuriukas={sniuriukasTodui}></Todo>))}
         </div>
     )
 }
