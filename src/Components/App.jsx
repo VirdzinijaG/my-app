@@ -1,39 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Todo from './Todo';
+import Book from './Book';
 
 function App() {
-
-    const [todos, setTodos] = useState([]);
+    const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        // console.log('Start');
-        axios.get('https://jsonplaceholder.typicode.com/todos/')
-            // axios.get('https://jsonplaceholder.typicode.com/todos/1')
-            // axios.get('https://jsonplaceholder.typicode.com/todos/2')
+        axios.get('https://in3.dev/knygos/')
             .then(function (response) {
                 console.log(response.data);
-                setTodos(response.data);
+                setBooks(response.data);
             })
     }, []);
 
-    const sniuriukasTodui = (id) => {
-        const todosCopy = todos.slice();
-        for (let i = 0; i < todosCopy.length; i++) {
-            if (id === todosCopy[i].id) {
-                todosCopy[i].completed = !todosCopy[i].completed
-                break;
-            }
-        }
-        // console.log(id);
-        setTodos(todosCopy);
-    }
+
 
     return (
-        <div className="todo-container">
-            {todos.map((todo) => (<Todo key={todo.id} data={todo} sniuriukas={sniuriukasTodui}></Todo>))}
+        <div className="book-container">
+            {books.map((book) => (<Book key={book.id} data={book}></Book>))}
         </div>
     )
 }
+
 
 export default App;
