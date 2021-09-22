@@ -220,3 +220,43 @@ button {
     }
   }
 }
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .todo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid skyblue;
+    border-radius: 4px;
+    .id {
+      margin: 5px 0 16px 0;
+      padding: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      background-color: skyblue;
+      border-radius: 50%;
+      color: springgreen;
+    }
+    .title {
+      padding: 5px 5px 5px 0;
+      letter-spacing: 0.5;
+      font-size: 12px;
+      color: skyblue;
+    }
+    .status {
+      width: 20px;
+      height: 20px;
+      margin: 12px;
+    }
+  }
+}
