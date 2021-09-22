@@ -7,7 +7,7 @@ function App() {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        console.log('Start');
+        // console.log('Start');
         axios.get('https://jsonplaceholder.typicode.com/todos/')
             // axios.get('https://jsonplaceholder.typicode.com/todos/1')
             // axios.get('https://jsonplaceholder.typicode.com/todos/2')
