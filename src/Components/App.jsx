@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Todo from './Todo';
 
 function App() {
+
+    const [todos, setTodos] = useState([]);
+
     useEffect(() => {
         console.log('Start');
         axios.get('https://jsonplaceholder.typicode.com/todos/')
@@ -9,12 +13,13 @@ function App() {
             // axios.get('https://jsonplaceholder.typicode.com/todos/2')
             .then(function (response) {
                 console.log(response.data);
+                setTodos(response.data);
             })
     }, [])
     return (
-        <>
-            Labas
-        </>
+        <div className="todo-container">
+            {todos.map((todo) => (<Todo key={todo.id} data={todo}></Todo>))}
+        </div>
     )
 }
 
