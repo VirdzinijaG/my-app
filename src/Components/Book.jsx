@@ -4,6 +4,7 @@ function Book(props) {
 
     return (
         <div className="book">
+            <div className="cat">Kategorija: {props.cat}</div>
             <div className="author">Autorius {props.data.author}</div>
             <div className="title">{props.data.title}</div>
             <img src={props.data.img} alt="#" />

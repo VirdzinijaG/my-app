@@ -6,6 +6,23 @@ import Sort from './Sort';
 
 function App() {
     const [books, setBooks] = useState([]);
+    const [cats, setCats] = useState([]);
+
+    useEffect(() => {
+        const bookCats = JSON.parse(localStorage.getItem('cats'))
+        if (bookCats !== null) {
+            setCats(bookCats);
+            return;
+        }
+
+
+        axios.get('https://in3.dev/knygos/types/')
+            .then(function (response) {
+                console.log(response.data);
+                setCats(response.data);
+                localStorage.setItem('cats', JSON.stringify(response.data))
+            })
+    }, []);
 
     useEffect(() => {
         axios.get('https://in3.dev/knygos/')
@@ -84,6 +101,15 @@ function App() {
         }
     }
 
+    const getCat = (id) => {
+        for (let i = 0; i < cats.length; i++) {
+            if (id === cats[i].id) {
+                return cats[i].title;
+            }
+        }
+        return '';
+    }
+
 
 
     return (
@@ -91,7 +117,7 @@ function App() {
             <h1>Knygų sąrašas</h1>
             <Sort makeSort={makeSort}></Sort>
             <div className="book-container">
-                {books.map((book) => (<Book key={book.id} data={book} delete={sniuriukasBook}></Book>))}
+                {books.map((book) => (<Book key={book.id} cat={getCat(book.id)} data={book} delete={sniuriukasBook}></Book>))}
             </div>
         </>
     )

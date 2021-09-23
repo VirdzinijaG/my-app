@@ -80,3 +80,14 @@ img:hover {
     margin: 10px;
     padding: 5px;
 }
+.cat {
+    margin: 5px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border-radius: 20px;
+    color: black;
+    text-align: center;
+}
