@@ -1,12 +1,31 @@
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 
 function LinkuMiskas() {
 
-    return (<nav>
-        <Link to={'home'}><h1>Linku miskas</h1></Link>
-        <Link to={'road'}><h1>Misko plentas</h1></Link>
-        <Link to={'street'}><h1>Misko gatve</h1></Link>
-    </nav>
+    return (
+        <div className="forest">
+            <nav>
+                <Link to={'home'}><h3>Linku miskas</h3></Link>
+                <Link to={'road'}><h3>Misko plentas</h3></Link>
+                <Link to={'street'}><h3>Misko gatve</h3></Link>
+            </nav>
+            <Switch>
+
+                <Route path={'/home'}>
+                    <h1>The Home</h1>
+                </Route>
+                <Route path={'/road'}>
+                    <h1>The Road</h1>
+                </Route>
+                <Route path={'/street'}>
+                    <h1>The Street</h1>
+                </Route>
+                <Route path={'/'}>
+                    <h1>The begining</h1>
+                </Route>
+
+            </Switch>
+        </div>
     )
 }
 
