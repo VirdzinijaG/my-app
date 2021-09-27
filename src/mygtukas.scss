@@ -267,3 +267,12 @@ button {
     }
   }
 }
+
+a {
+  text-decoration: none;
+  color: darkcyan;
+  transition: all 3s;
+  &:hover {
+    color: darkgreen;
+  }
+}
