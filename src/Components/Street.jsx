@@ -1,6 +1,12 @@
+import { useParams } from "react-router-dom";
+
+
 function Street() {
+
+    const { street } = useParams();
+
     return (
-        <h1>Street</h1>
+        <h1>Street {street}</h1>
     )
 }
 
