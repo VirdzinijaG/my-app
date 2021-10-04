@@ -29,3 +29,14 @@
     align-items: center;
     flex-direction: column;
 }
+
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    height: 200px;
+    width: 500px;
+    border: 4px dashed greenyellow;
+}
