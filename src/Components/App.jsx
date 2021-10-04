@@ -6,9 +6,9 @@ function App() {
     return (
         <>
             <Field letters={letters}></Field>
-            <button>Theme 1</button>
-            <button>Theme 2</button>
-            <button>Theme 3</button>
+            <button className='field-button'>Theme 1</button>
+            <button className='field-button'>Theme 2</button>
+            <button className='field-button'>Theme 3</button>
         </>
     )
 }
