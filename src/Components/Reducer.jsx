@@ -8,7 +8,7 @@ function Reducer() {
 
     return (
         <div className="button-shelf">
-            <button onClick={() => buttonDispacher({})} style={{ color: buttonState }}>Press</button>
+            <button onClick={() => buttonDispacher({type: 'change_color'})} style={{ color: buttonState }}>Press</button>
         </div>
 
     )
