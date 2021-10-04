@@ -1,5 +1,7 @@
 import { useReducer } from 'react';
 import buttonReducer from '../Reducers/buttonReducer';
+// import { CHANGE_COLOR } from '../Constants/type';
+import { changeColor } from '../Actions/index';
 
 
 function Reducer() {
@@ -8,7 +10,7 @@ function Reducer() {
 
     return (
         <div className="button-shelf">
-            <button onClick={() => buttonDispacher({type: 'change_color'})} style={{ color: buttonState }}>Press</button>
+            <button onClick={() => buttonDispacher(changeColor())} style={{ color: buttonState }}>Press</button>
         </div>
 
     )
