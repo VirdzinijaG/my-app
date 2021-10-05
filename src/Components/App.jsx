@@ -1,46 +1,56 @@
-import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react/cjs/react.development";
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Post from './Post';
+import NewPost from './NewPost';
 
 function App() {
-    const counter = useRef(0);
-    const crazyRef = useRef();
-    const [turboCounter, setTurboCounter] = useState(0);
 
-    const clicker = () => {
-        counter.current++
-        console.log('kaunteris: ' + counter.current);
-    }
-
-    const turboClicker = () => {
-        setTurboCounter(turboCounter + 1);
-    }
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        console.log(crazyRef.current);
-        crazyRef.current.style.fontSize = '50px';
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(function (response) {
+                console.log(response.data);
+                setPosts(response.data);
+            })
+    }, []);
 
-        //
-        document.querySelector('.crazy').style.color = "blue";
+    const doDelete = id => {
+        axios.delete('https://jsonplaceholder.typicode.com/posts/' + id, {
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
-        setTimeout(() => {
-            document.querySelector('.crazy').innerHTML = "Change text";
+    const doAdd = (data) => {
+        axios.post('https://jsonplaceholder.typicode.com/posts/', data
+        )
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
-        }, 2000)
-
-    }, [])
+    const crud = {
+        delete: doDelete
+    }
 
 
     return (
-        <>
-            <h1>REF: {counter.current}</h1>
-            <h1>STATE: {turboCounter}</h1>
-            <button onClick={clicker}>REF: Ja Ja</button>
-            <button onClick={turboClicker}>STATE: Ja Ja</button>
-            <div ref={crazyRef} className='crazy'>CRAZY</div>
-        </>
-    )
+        <div>
+            <div className="new-post-container">
+                <NewPost add={doAdd} />
+            </div>
+            <div className="posts-container">
+                {posts.map((post) => (<Post key={post.id} data={post} crud={crud} />))}
+            </div>
+        </div>);
 }
 
 export default App;
