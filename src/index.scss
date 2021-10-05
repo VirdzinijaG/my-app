@@ -55,3 +55,19 @@
     width: 150px;
     background-color: chartreuse;
 }
+
+
+
+.crazy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    border: 4px dashed greenyellow;
+    padding: 10px;
+    margin: 60px;
+    border-radius: 50%;
+}
