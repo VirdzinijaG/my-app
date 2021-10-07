@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import Post from "./Post";
-import NewPost from "./NewPost";
+import Post from "./Post1";
+import NewPost from "./NewPost1";
 import PostModal from "./PostModal";
 
 function App() {
