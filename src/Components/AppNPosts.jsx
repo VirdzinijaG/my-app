@@ -26,7 +26,7 @@ function App() {
 
   const doAdd = (data) => {
     axios
-      .post("http://localhost:3003/posts", data)
+      .post("https://jsonplaceholder.typicode.com/posts/", data)
       .then(function (response) {
         console.log(response);
       })
